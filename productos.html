@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tienda de Implementos Deportivos</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">WoSport</div>
+      <div class="cart" id="iconoCarrito">
+        <span class="icon">🛒</span>
+      </div>
+    </nav>
+
+    <div class="contenedor">
+      <aside class="filtros">
+        <h3>Filtros</h3>
+        <label for="filtroCategoria">Filtro Categoría:</label>
+        <select id="filtroCategoria">
+          <option value="all">Todos</option>
+        </select>
+
+        <label for="filtroTipo">Filtro Tipo:</label>
+        <input type="text" id="filtroTipo" placeholder="Filtrar por tipo" />
+
+        <button onclick="filtrarProductos()">Filtrar</button>
+        <button onclick="limpiarFiltros()">Limpiar Filtros</button>
+      </aside>
+
+      <section id="vistaProductos" class="grid-container"></section>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detalles del Producto</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo" id="logo">WoSport</div>
+      <div class="cart" id="iconoCarrito">
+        <span class="icon">🛒</span>
+      </div>
+    </nav>
+
+    <section id="vistaDetalle" class="detalle-layout">
+      <div class="detalle-imagen">
+        <img id="detalleImagen" src="" alt="Imagen del Producto" />
+      </div>
+
+      <div class="detalle-info">
+        <h2 id="detalleNombre">Nombre del Producto</h2>
+        <p id="detallePrecio">Precio: $XX</p>
+        <p id="detalleDescripcion">Descripción del Producto</p>
+
+        <div class="detalle-cantidad">
+          <label for="cantidadProducto">Cantidad:</label>
+          <input type="number" id="cantidadProducto" min="1" value="1" />
+        </div>
+
+        <button class="btn-agregar" onclick="agregarAlCarrito()">
+          Agregar al Carrito
+        </button>
+        <button class="btn-comprar" onclick="comprarAhora()">
+          Comprar Ahora
+        </button>
+        <button class="btn-volver" onclick="volverAProductos()">
+          Volver a Productos
+        </button>
+      </div>
+    </section>
+
+    <script src="main.js"></script>
+    <script src="data.js"></script>
+  </body>
+</html>

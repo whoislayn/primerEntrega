@@ -4,7 +4,7 @@
   "description": "A template for HTML and CSS",
   "main": "index.html",
   "scripts": {
-    "start": "serve"
+    "start": "http-server -p 3000"
   },
   "keywords": [
     "html",
@@ -13,6 +13,7 @@
   "author": "Ives van Hoorne",
   "license": "MIT",
   "devDependencies": {
+    "http-server": "^14.1.1",
     "serve": "11.2.0"
   }
 }

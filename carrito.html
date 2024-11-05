@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo" id="logo">WoSport</div>
+      <div class="cart" id="iconoCarrito">
+        <span class="icon">🛒</span>
+      </div>
+    </nav>
+
+    <section id="vistaCarrito" class="carrito-layout">
+      <div class="tabla-productos">
+        <h2>Productos en el Carrito</h2>
+        <table id="tablaCarrito">
+          <thead>
+            <tr>
+              <th>Imagen</th>
+              <th>Nombre</th>
+              <th>Precio</th>
+              <th>Cantidad</th>
+              <th>Subtotal</th>
+              <th>Eliminar</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <div class="totales-carrito">
+          <div class="totales-item">
+            <span>Subtotal:</span>
+            <span id="subtotal">$0.00</span>
+          </div>
+          <div
+            class="totales-item"
+            id="cargoDomicilioSection"
+            style="display: none"
+          >
+            <span>Cargo por domicilio:</span>
+            <span id="cargoDomicilio">$0.00</span>
+          </div>
+          <div class="totales-item totales-total">
+            <span>Total:</span>
+            <span id="totalCompra">$0.00</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="resumen-compra">
+        <h2>Información de Tarjeta de Crédito</h2>
+        <form id="formTarjeta">
+          <label for="nombreTitular">Nombre del Titular:</label>
+          <input type="text" id="nombreTitular" placeholder="Nombre" required />
+
+          <label for="paisEmision">País de Emisión:</label>
+          <select id="paisEmision" required>
+            <option value="">Seleccione un país</option>
+            <option value="Argentina">Argentina</option>
+            <option value="Brasil">Brasil</option>
+            <option value="Chile">Chile</option>
+            <option value="Colombia">Colombia</option>
+            <option value="Ecuador">Ecuador</option>
+            <option value="México">México</option>
+            <option value="Perú">Perú</option>
+            <option value="Uruguay">Uruguay</option>
+            <option value="Venezuela">Venezuela</option>
+            <option value="Estados Unidos">Estados Unidos</option>
+          </select>
+
+          <label for="numeroTarjeta">Número de Tarjeta:</label>
+          <input
+            type="text"
+            id="numeroTarjeta"
+            maxlength="16"
+            placeholder="XXXXXXXXXXXXXXXX"
+            required
+          />
+
+          <label for="fechaExpiracion">Fecha de Expiración (MM/AA):</label>
+          <input
+            type="text"
+            id="fechaExpiracion"
+            placeholder="MM/AA"
+            maxlength="5"
+            inputmode="numeric"
+            required
+          />
+
+          <label for="codigoSeguridad">Código de Seguridad (CVV):</label>
+          <input
+            type="password"
+            id="codigoSeguridad"
+            maxlength="3"
+            placeholder="XXX"
+            required
+          />
+
+          <label>Tipo de Tarjeta:</label>
+          <div>
+            <input
+              type="radio"
+              id="mastercard"
+              name="tipoTarjeta"
+              value="Mastercard"
+              required
+            />
+            <label for="mastercard">Mastercard</label>
+            <input
+              type="radio"
+              id="visa"
+              name="tipoTarjeta"
+              value="Visa"
+              required
+            />
+            <label for="visa">Visa</label>
+            <input
+              type="radio"
+              id="prepagada"
+              name="tipoTarjeta"
+              value="Prepagada"
+              required
+            />
+            <label for="prepagada">Prepagada</label>
+          </div>
+
+          <button type="reset">Limpiar Campos</button>
+          <button type="button" onclick="confirmarCompra()">
+            Confirmar Compra
+          </button>
+        </form>
+        <button onclick="volverAProductos()">Volver a Productos</button>
+        <button onclick="cancelarCompra()">Cancelar Compra</button>
+      </aside>
+    </section>
+
+    <script src="main.js"></script>
+  </body>
+</html>

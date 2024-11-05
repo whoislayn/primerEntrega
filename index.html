@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro de Compra</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <section id="registroCompra" class="registro-compra">
+      <h1>Registro de Requisitos de Compra</h1>
+      <form id="formRegistro">
+        <label for="nombre">Nombre (máx. 20 caracteres):</label>
+        <input type="text" id="nombre" maxlength="20" required />
+
+        <label for="presupuesto">Presupuesto Máximo (en pesos):</label>
+        <input type="number" id="presupuesto" min="0" required />
+
+        <label for="cantidadArticulos"
+          >Cantidad Máxima de Artículos (máx. 20):</label
+        >
+        <input type="number" id="cantidadArticulos" min="1" max="20" required />
+
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" required />
+
+        <label>Tipo de Entrega:</label>
+
+        <label for="domicilio">Domicilio</label>
+        <input
+          type="radio"
+          id="domicilio"
+          name="tipoEntrega"
+          value="Domicilio"
+          required
+        />
+        <label for="recoger">Recoger en tienda</label>
+        <input type="radio" id="recoger" name="tipoEntrega" value="Recoger" />
+        <button type="button" onclick="guardarRegistro()">
+          Iniciar Compra
+        </button>
+        <button type="reset">Limpiar Campos</button>
+      </form>
+      <p id="mensajeError" style="color: red"></p>
+    </section>
+
+    <script src="main.js"></script>
+    <script src="data.js"></script>
+  </body>
+</html>
