@@ -423,6 +423,7 @@ window.onload = function () {
   } else {
     configurarFiltros();
     cargarProductos();
+    setupScrollInfinito();
   }
 
   const iconoCarrito = document.getElementById("iconoCarrito");
@@ -432,6 +433,19 @@ window.onload = function () {
     });
   }
 };
+
+function setupScrollInfinito() {
+  const gridContainer = document.getElementById("vistaProductos");
+
+  gridContainer.addEventListener("scroll", function () {
+    if (
+      gridContainer.scrollTop + gridContainer.clientHeight >=
+      gridContainer.scrollHeight - 5
+    ) {
+      cargarProductos();
+    }
+  });
+}
 
 document.getElementById("logo").addEventListener("click", function () {
   window.location.href = "productos.html";
